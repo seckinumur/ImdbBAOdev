@@ -57,6 +57,7 @@ namespace ImdbBAOdev
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["ID"]);
             using (IbmdDB db = new IbmdDB())
             {
                 var bul = db.Film.Where(p => p.FilmID == id).FirstOrDefault();
